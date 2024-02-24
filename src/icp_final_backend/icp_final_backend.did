@@ -1,0 +1,22 @@
+
+
+type Nft = record{
+    owner:text;
+    id:nat64;
+};
+type Task =record{
+    tasks: vec text;
+};
+
+
+service : {
+    "display_data": (api_key:text) -> (text) ;
+    "nft_transfer": (receiver:text) -> (text) ;
+    "initialize_list": () -> (text) ;
+    "add_task": (description:text) -> (text) ;
+    "erase_task": (description:text) -> (text) ;
+    "display_list": () -> (text) ;
+    "get" : () -> (nat) query;
+    "set" : (nat) -> ();
+    "inc" : () -> ();
+}
